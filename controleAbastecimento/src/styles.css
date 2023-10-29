@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~materialize-css/dist/css/materialize.css";
+
+:host {
+    display: flex;
+    flex-direction: column;
+    min-height: 82vh; 
+    overflow-y: auto;
+  }
+  
+  .page-footer {
+    margin-top: auto;
+    background-color: #0080FF;
+    color: #ffffff;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
