@@ -11,4 +11,5 @@
   <router-outlet></router-outlet>
 </main>
 
+<app-welcome-modal *ngIf="showWelcomeModal" [welcomeMessage]="'Bem vindo ao gerenciador de Abastecimentos-'" (modalClosed)="closeWelcomeModal()"></app-welcome-modal>
 <app-footer></app-footer>

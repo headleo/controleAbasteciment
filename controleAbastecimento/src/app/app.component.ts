@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import * as M from 'materialize-css'
+import { TaskService } from './task.service';
 
 @Component({
   selector: 'app-root',
@@ -7,8 +8,14 @@ import * as M from 'materialize-css'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TESTE TAREFA 08  ';
+  title = 'atividade 09';
   desc ='';
+
+  showWelcomeModal = true;
+
+  closeWelcomeModal() {
+    this.showWelcomeModal = false;
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function() {

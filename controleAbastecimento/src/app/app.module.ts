@@ -8,6 +8,7 @@ import { TaskFormComponent } from './task-form/task-form.component';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
 import { FormsModule } from '@angular/forms';
+import { WelcomeModalComponent } from './welcome-modal/welcome-modal.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FormsModule } from '@angular/forms';
     TaskFormComponent,
     AppHeaderComponent,
     AppFooterComponent,
+    WelcomeModalComponent,
   ],
   imports: [
     BrowserModule,
