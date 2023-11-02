@@ -1,0 +1,28 @@
+<nav class="green lighten-2">
+  <div class="nav-wrapper">
+    <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+      
+      <!--Criar navegação entre páginas por meio de rotas.-->
+      <li><a routerLink="/cadastro-abastecimentos">Cadastro de Abastecimentos</a></li>
+      <li><a routerLink="/lista-abastecimentos">Listar abastecimentos</a></li>
+    </ul>
+    
+    <a href="#" class="brand-logo center">Gerenciado de abastecimento v1</a>
+  
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        <div class="input-field" style="display: flex; align-items: center;">
+        <input type="text" placeholder="Pesquisar" [(ngModel)]="pesquisaText" />
+        <button class="btn" style="margin-left: 10px; margin-right: 5px;" (click)="pesquisarAbastecimento()">Pesquisar</button>
+      </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-nav">
+  <li><a routerLink="/cadastro-abastecimentos">Cadastro de Abastecimentos</a></li>
+  <li><a routerLink="/lista-abastecimentos">Listar abastecimentos</a></li>
+</ul>

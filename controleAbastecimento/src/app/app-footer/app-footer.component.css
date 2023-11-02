@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 82vh; 
+  overflow-y: auto;
+}
+
+.page-footer {
+  margin-top: auto;
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

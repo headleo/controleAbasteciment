@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-content">
+          <div class="row">
+            <div class="col s6">
+              <h4>Abastecimentos Cadastrados</h4>
+            </div>
+            <div class="col s6 right-align">
+              <a routerLink="/">
+                <button class="btn">Fechar</button>
+              </a>
+            </div>
+          </div>
+
+          <table class="striped">
+            <thead>
+              <tr>
+                <th>Placa</th>
+                <th>Veiculo</th>
+                <th>VeiculoFirma</th>
+                <th>Data de Abastecimento</th>
+                <th>Combustivel</th>
+                <th>Operações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let task of tasks">
+                <td>{{ task.placa }}</td>
+                <td>{{ task.veiculo }}</td>
+                <td>{{ task.veiculoFirma }}</td>
+                <td>{{ task.dataAbastecimento }}</td>
+                <td>{{ task.combustivel }}</td>
+                <td>
+                  <button class="btn" style="margin-left: 5px;" (click)="deleteTask(task)">Apagar</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
