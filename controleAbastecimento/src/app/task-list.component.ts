@@ -16,9 +16,9 @@ export class TaskListComponent {
   ngOnInit(): void {
     // Verifica se existe um parâmetro na rota
     this.route.params.subscribe(params => {
-      if (params['titulo']) {
-        const tituloParam = params['titulo'];
-        this.tasks = this.taskService.getTasksByTitulo(tituloParam);
+      if (params['placa']) {
+        const placaParam = params['placa'];
+        this.tasks = this.taskService.getTasksByTitulo(placaParam);
       } else {
         this.tasks = this.taskService.getTasks(); 
       }

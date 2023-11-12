@@ -8,8 +8,6 @@ import { TaskService } from './task.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'atividade 09';
-  desc ='';
 
   showWelcomeModal = true;
 

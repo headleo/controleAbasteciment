@@ -33,6 +33,7 @@
                 <td>{{ task.dataAbastecimento }}</td>
                 <td>{{ task.combustivel }}</td>
                 <td>
+                  <button class="btn" style="margin-left: 5px;" (click)="editTask(task)">Editar</button>
                   <button class="btn" style="margin-left: 5px;" (click)="deleteTask(task)">Apagar</button>
                 </td>
               </tr>

@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-@Component({
-  selector: 'app-header',
-  templateUrl: './app-header.component.html',
-  styleUrls: ['./app-header.component.css']
-})
-export class AppHeaderComponent {
-  pesquisaText: string = ''; 
-  constructor(private router: Router) {}
-  
-  pesquisarAbastecimento() {
-  
-    this.router.navigate(['/lista-abastecimentos', this.pesquisaText]);
-    this.pesquisaText = '';
-  }
-}
+import { AppHeaderComponent } from './app-header.component';
+
+describe('AppHeaderComponent', () => {
+  let component: AppHeaderComponent;
+  let fixture: ComponentFixture<AppHeaderComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [AppHeaderComponent]
+    });
+    fixture = TestBed.createComponent(AppHeaderComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

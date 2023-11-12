@@ -13,33 +13,88 @@
           </div>
         </div>
 
-        <form>
+        <form #form="ngForm" (submit)="onSubmit()">
           <div class="input-field">
-            <input type="text" id="placa" [(ngModel)]="task.placa" name="placa"/>
+            <input
+              type="text"
+              id="placa"
+              [(ngModel)]="task.placa"
+              name="placa"
+              required
+              (input)="validateTitulo()"
+              placeholder="ABC1234"
+            />
             <label for="placa">Placa</label>
+            <span class="error-message" *ngIf="errors['placa']">{{ errors['placa'] }}</span>
           </div>
+
           <div class="input-field">
-            <input type="text" id="veiculo" [(ngModel)]="task.veiculo" name="veiculo"/>
+            <input
+              type="text"
+              id="veiculo"
+              [(ngModel)]="task.veiculo"
+              name="veiculo"
+              required
+              (input)="validateDescricao()"
+              placeholder="Corsa"
+            />
             <label for="veiculo">Veiculo</label>
+            <span class="error-message" *ngIf="errors['veiculo']">{{ errors['veiculo'] }}</span>
           </div>
+
           <div class="input-field">
-            <input type="text" id="veiculoFirma" [(ngModel)]="task.veiculoFirma" name="veiculoFirma" />
+            <input
+              type="text"
+              id="veiculoFirma"
+              [(ngModel)]="task.veiculoFirma"
+              name="veiculoFirma"
+              pattern="^[A-Za-z\s]+$"
+              required
+              (input)="validateVeiculoFirma()"
+              placeholder="Sim"
+            />
             <label for="veiculoFirma">VeiculoFirma</label>
+            <span class="error-message" *ngIf="errors['veiculoFirma']">{{ errors['veiculoFirma'] }}</span>
           </div>
+
           <div class="input-field">
-            <input type="text" id="dataAbastecimento" [(ngModel)]="task.dataAbastecimento" name="dataAbastecimento" />
+            <input
+              type="text"
+              id="dataAbastecimento"
+              [(ngModel)]="task.dataAbastecimento"
+              name="dataAbastecimento"
+              pattern="^\d{4}-\d{2}-\d{2}$"
+              required
+              (input)="validateDataEntrega()"
+              placeholder="2023-01-01"
+            />
             <label for="dataAbastecimento">Data de Abastecimento</label>
+            <span class="error-message" *ngIf="errors['dataAbastecimento']">{{ errors['dataAbastecimento'] }}</span>
           </div>
+
           <div class="input-field">
-            <input type="text" id="combustivel" [(ngModel)]="task.combustivel" name="combustivel" />
+            <input
+              type="text"
+              id="combustivel"
+              [(ngModel)]="task.combustivel"
+              name="combustivel"
+              pattern="^[A-Za-z\s]+$"
+              required
+              (input)="validateCombustivel()"
+              placeholder="Alcool"
+            />
             <label for="combustivel">Combustivel</label>
+            <span class="error-message" *ngIf="errors['combustivel']">{{ errors['combustivel'] }}</span>
           </div>
+
           <div class="row">
             <div class="col s6">
-              <button class="btn" (click)="limparCampos()">Limpar</button>
+              <button class="btn" type="button" (click)="limparCampos()">Limpar</button>
             </div>
             <div class="col s6 right-align">
-              <button class="btn" (click)="cadastrarAbastecimento()">Cadastrar</button>
+              
+              <!--Desabilitar o botão de submit enquanto o formulário está inválido.-->
+              <button class="btn" type="submit" [disabled]="hasErrors()">Cadastrar</button>
             </div>
           </div>
         </form>

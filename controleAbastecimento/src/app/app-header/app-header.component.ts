@@ -8,11 +8,13 @@ import { Router } from '@angular/router';
 })
 export class AppHeaderComponent {
   pesquisaText: string = ''; 
+  cadAbastecimento = 'Cadastro de Abastecimentos'
+  list ='Listar abastecimentos'
   constructor(private router: Router) {}
   
   pesquisarAbastecimento() {
   
-    this.router.navigate(['/lista-abastecimento', this.pesquisaText]);
+    this.router.navigate(['/lista-abastecimentos', this.pesquisaText]);
     this.pesquisaText = '';
   }
 }
