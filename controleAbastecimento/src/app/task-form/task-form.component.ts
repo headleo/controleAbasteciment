@@ -17,7 +17,6 @@ export class TaskFormComponent implements OnInit , AfterViewInit {
 
   
   ngOnInit() {
-    this.taskService.loadTasksFromLocalStorage();
   
     this.route.params.subscribe(params => {
       const taskId = params['id'];
@@ -113,14 +112,14 @@ export class TaskFormComponent implements OnInit , AfterViewInit {
   
     if (!this.hasErrors()) {
       if (this.task.id) {
-        // Atualizar abastecimento existente
+        // Atualizar tarefa existente
         this.taskService.updateTask(this.task);
         M.toast({
           html: 'Abastecimento atualizada com sucesso!',
           classes: 'green lighten-2 white-text'
         });
       } else {
-        // Cadastrar nova abastecimento
+        // Cadastrar nova tarefa
         this.taskService.addTask(this.task);
         M.toast({
           html: 'Abastecimento cadastrado com sucesso! Verifique na tela de listagem.',

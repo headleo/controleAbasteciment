@@ -1,0 +1,39 @@
+{
+  "tasks": [
+    {
+      "placa": "ABC123",
+      "veiculo": "corsa",
+      "veiculoFirma": "NAO",
+      "dataAbastecimento": "2023-11-12",
+      "combustivel": "alcoll",
+      "id": "1"
+    },
+    [
+      {
+        "placa": "DEF123",
+        "veiculo": "GOL",
+        "veiculoFirma": "SIM",
+        "dataAbastecimento": "2022-11-12",
+        "combustivel": "GASOLINA",
+        "id": "2"
+      }
+    ]
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
