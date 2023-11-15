@@ -1,0 +1,3 @@
+[submodule "controleAbastecimento/controleAbastecimento/controleAbasteciment"]
+	path = controleAbastecimento/controleAbastecimento/controleAbasteciment
+	url = https://github.com/headleo/controleAbasteciment.git
