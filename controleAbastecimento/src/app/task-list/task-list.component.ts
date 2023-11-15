@@ -38,7 +38,7 @@ ngOnInit(): void {
   }
 
   editTask(task: Task) {
-    const taskCopy = { ...task }; // Clona a abastecimento para edição
+    const taskCopy = { ...task }; // Clona a tarefa para edição
     this.router.navigate(['/task-form', task.id], { state: { task: taskCopy } });
   }
   

@@ -17,6 +17,7 @@ export class TaskFormComponent implements OnInit , AfterViewInit {
 
   
   ngOnInit() {
+    this.taskService.loadTasksFromLocalStorage();
   
     this.route.params.subscribe(params => {
       const taskId = params['id'];
@@ -57,17 +58,17 @@ export class TaskFormComponent implements OnInit , AfterViewInit {
     this.errors = {};
   }
 
-  validateTitulo() {
+  validatePlaca() {
     if (!this.task.placa) {
-      this.errors['placa'] = 'Placa é obrigatório';
+      this.errors['placa'] = 'Placa é obrigatória';
     } else {
       this.errors['placa'] = '';
     }
   }
 
-  validateDescricao() {
+  validateVeiculo() {
     if (!this.task.veiculo) {
-      this.errors['veiculo'] = 'Veiculo é obrigatória';
+      this.errors['veiculo'] = 'Veiculo é obrigatório';
     } else {
       this.errors['veiculo'] = '';
     }
@@ -81,7 +82,7 @@ export class TaskFormComponent implements OnInit , AfterViewInit {
     }
   }
 
-  validateDataEntrega() {
+  validateDataAbastecimento() {
     if (!this.task.dataAbastecimento.match(/^\d{4}-\d{2}-\d{2}$/)) {
       this.errors['dataAbastecimento'] = 'Data de Abastecimento deve estar no formato yyyy-mm-dd';
     } else {
@@ -104,10 +105,10 @@ export class TaskFormComponent implements OnInit , AfterViewInit {
 
   onSubmit() {
     //Validar campos do formulário com Expressões Regulares e apresentar os erros.
-    this.validateTitulo();
-    this.validateDescricao();
+    this.validatePlaca();
+    this.validateVeiculo();
     this.validateVeiculoFirma();
-    this.validateDataEntrega();
+    this.validateDataAbastecimento();
     this.validateCombustivel();
   
     if (!this.hasErrors()) {
@@ -115,7 +116,7 @@ export class TaskFormComponent implements OnInit , AfterViewInit {
         // Atualizar tarefa existente
         this.taskService.updateTask(this.task);
         M.toast({
-          html: 'Abastecimento atualizada com sucesso!',
+          html: 'Abastecimento atualizado com sucesso!',
           classes: 'green lighten-2 white-text'
         });
       } else {

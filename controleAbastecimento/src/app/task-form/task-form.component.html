@@ -21,10 +21,11 @@
               [(ngModel)]="task.placa"
               name="placa"
               required
-              (input)="validateTitulo()"
+              (input)="validatePlaca()"
               placeholder="ABC1234"
             />
             <label for="placa">Placa</label>
+            <!--usa ngIf para exibir erro se existir-->
             <span class="error-message" *ngIf="errors['placa']">{{ errors['placa'] }}</span>
           </div>
 
@@ -35,7 +36,7 @@
               [(ngModel)]="task.veiculo"
               name="veiculo"
               required
-              (input)="validateDescricao()"
+              (input)="validateVeiculo()"
               placeholder="Corsa"
             />
             <label for="veiculo">Veiculo</label>
@@ -65,7 +66,7 @@
               name="dataAbastecimento"
               pattern="^\d{4}-\d{2}-\d{2}$"
               required
-              (input)="validateDataEntrega()"
+              (input)="validateDataAbastecimento()"
               placeholder="2023-01-01"
             />
             <label for="dataAbastecimento">Data de Abastecimento</label>
