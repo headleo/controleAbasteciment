@@ -30,7 +30,7 @@
                 <td>{{ task.placa }}</td>
                 <td>{{ task.veiculo }}</td>
                 <td>{{ task.veiculoFirma }}</td>
-                <td>{{ task.dataAbastecimento }}</td>
+                <td>{{ task.dataAbastecimento | dateFormat }}</td>
                 <td>{{ task.combustivel }}</td>
                 <td>
                   <button class="btn" style="margin-left: 5px;" (click)="editTask(task)">Editar</button>
